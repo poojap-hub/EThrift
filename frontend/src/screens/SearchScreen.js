@@ -12,6 +12,7 @@ import MessageBox from "../components/MessageBox";
 import Button from "react-bootstrap/Button";
 import Product from "../components/Product";
 import LinkContainer from "react-router-bootstrap/LinkContainer";
+import { motion } from "framer-motion";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -250,7 +251,13 @@ export default function SearchScreen() {
               <Row>
                 {products.map((product) => (
                   <Col sm={6} lg={4} className="mb-3" key={product._id}>
-                    <Product product={product}></Product>
+                    <motion.div
+                      whileHover={{
+                        scale: 1.05,
+                        transition: { duration: 0.5 },
+                      }}>
+                      <Product product={product}></Product>
+                    </motion.div>
                   </Col>
                 ))}
               </Row>
@@ -262,7 +269,7 @@ export default function SearchScreen() {
                     className="mx-1"
                     to={{
                       pathname: "/search",
-                      seacrh: getFilterUrl({ page: x + 1 }, true),
+                      search: getFilterUrl({ page: x + 1 }, true),
                     }}>
                     <Button
                       className={Number(page) === x + 1 ? "text-bold" : ""}
