@@ -40,18 +40,29 @@ main {
   max-width: 400px;
 }
 
-/* Used for image box on home screen*/
+.sign-in-image img {
+  width: 110%;
+  height: auto;
+}
+
+.img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Used for image box on home screen
 .card-img-top {
   width: 100%;
   max-width: 400px;
   max-height: 350px;
   height: auto;
-}
-/* Used for card on home screen*/
+}*/
+/* Used for card on home screen
 .list-item-main-card {
   width: 320px;
   height: 415px;
-}
+}*/
 
 .product-info {
   padding: 1rem;
